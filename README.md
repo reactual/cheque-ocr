@@ -45,7 +45,7 @@ chequeOCR(image, function(err, result) {
 });
 ```
 
-For a demo, run `node example/example.js`.
+For a demo, run `node examples/basic.js`.
 
 ## How it works
 

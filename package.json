@@ -6,7 +6,11 @@
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --timeout 10000"
   },
-  "author": "",
+  "files": [
+    "index.js",
+    "mcr.traineddata"
+  ],
+  "author": "Peter Graham",
   "license": "ISC",
   "dependencies": {
     "named-regexp": "^0.1.1",

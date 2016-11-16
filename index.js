@@ -3,9 +3,7 @@ var Tesseract = require('tesseract.js'),
     _ = require('underscore');
 
 var LANGUAGE_CODE = 'mcr';
-var LANGUAGE_PATH = './';
 var MICR_CHARACTERS = '0123456789abcd';
-var TESSERACT_CLIENT = Tesseract.create({langPath: LANGUAGE_PATH});
 var SYMBOL_CONFIDENCE_THRESHOLD_PERCENT = 45;
 var CANADIAN_CHEQUE_REGEX = named(/[0-9]+ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
 
@@ -22,7 +20,7 @@ function removeNonNumericSymbols(text) {
 }
 
 module.exports = function(image, callback) {
-  TESSERACT_CLIENT.recognize(image, {
+  Tesseract.recognize(image, {
     lang: LANGUAGE_CODE,
     tessedit_char_whitelist: MICR_CHARACTERS,
   }).then(function(result){
