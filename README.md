@@ -11,7 +11,7 @@ Optical Character Recognition for cheques using the [MICR Code](https://en.wikip
   </thead>
   <tr>
     <td>
-      <img src="https://cloud.githubusercontent.com/assets/158675/20335204/9e83d266-ab8e-11e6-899b-48caa8938841.jpg" width="500">
+      <img src="https://cloud.githubusercontent.com/assets/158675/20336871/7e21714c-ab9b-11e6-890e-70bd0569ce9a.jpg" width="420">
     </td>
     <td>
       <pre>
