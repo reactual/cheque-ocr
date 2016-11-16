@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "named-regexp": "^0.1.1",
-    "tesseract.js": "^1.0.10"
+    "tesseract.js": "^1.0.10",
+    "underscore": "^1.8.3"
   }
 }
