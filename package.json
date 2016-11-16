@@ -8,7 +8,7 @@
   },
   "files": [
     "index.js",
-    "mcr.traineddata"
+    "micr.traineddata"
   ],
   "author": "Peter Graham",
   "license": "ISC",

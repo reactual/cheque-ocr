@@ -2,7 +2,7 @@ var Tesseract = require('tesseract.js'),
     named = require('named-regexp').named,
     _ = require('underscore');
 
-var LANGUAGE_CODE = 'mcr';
+var LANGUAGE_CODE = 'micr';
 var MICR_CHARACTERS = '0123456789abcd';
 var SYMBOL_CONFIDENCE_THRESHOLD_PERCENT = 45;
 var CANADIAN_CHEQUE_REGEX = named(/[0-9]+ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
