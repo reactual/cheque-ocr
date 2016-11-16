@@ -27,13 +27,20 @@ module.exports = function(image, callback) {
   }).then(function(result){
     var text = result.text;
 
-    // TODO: this section of code needs to be tested.
+    if (result.blocks.length === 0 || result.blocks[0].lines.length === 0) {
+      return callback({error: "NO_TEXT_BLOCKS_FOUND"}, {});
+    }
+
     var lines = result.blocks[0].lines;
     var chequeSections = lines[lines.length - 1].words.map(function(section) {
       return constructConfidentText(section.symbols);
     });
     var chequeLine = chequeSections.join("");
     var chequeMatches = CANADIAN_CHEQUE_REGEX.exec(chequeLine);
+
+    if (!chequeMatches) {
+      return callback({error: "NO_CHEQUE_NUMBERS_FOUND"}, {});
+    }
 
     var response = {
       cheque: removeNonNumericSymbols(chequeMatches.capture('cheque')),
@@ -42,6 +49,6 @@ module.exports = function(image, callback) {
       account: removeNonNumericSymbols(chequeMatches.capture('account')),
       rawText: text,
     };
-    callback(response);
+    callback(null, response);
   });
 };
