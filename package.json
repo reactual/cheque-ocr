@@ -4,7 +4,7 @@
   "description": "Optical Character Recognition for cheques using the MICR Code standard.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha --reporter spec --timeout 10000"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,9 @@
     "named-regexp": "^0.1.1",
     "tesseract.js": "^1.0.10",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
   }
 }
