@@ -1,4 +1,4 @@
-# cheque-ocr
+# cheque-ocr [![Build Status](https://travis-ci.org/wealthsimple/cheque-ocr.svg?branch=master)](https://travis-ci.org/wealthsimple/cheque-ocr)
 
 Optical Character Recognition for cheques using the [MICR Code](https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition) standard.
 
