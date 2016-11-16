@@ -7,7 +7,7 @@ var LANGUAGE_PATH = './';
 var MICR_CHARACTERS = '0123456789abcd';
 var TESSERACT_CLIENT = Tesseract.create({langPath: LANGUAGE_PATH});
 var CONFIDENCE_THRESHOLD_PERCENT = 45;
-var CANADIAN_CHEQUE_REGEX = named(/c(:<cheque>[0-9]{3,})ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
+var CANADIAN_CHEQUE_REGEX = named(/[0-9]+ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
 
 function getConfidentSymbols(words) {
   return _.flatten(words.map(function(word) {
@@ -49,7 +49,6 @@ module.exports = function(image, callback) {
 
     response.confidence = averageConfidence;
     response.numbers = {
-      cheque: removeNonNumericSymbols(chequeMatches.capture('cheque')),
       transit: removeNonNumericSymbols(chequeMatches.capture('transit')),
       institution: removeNonNumericSymbols(chequeMatches.capture('institution')),
       account: removeNonNumericSymbols(chequeMatches.capture('account')),

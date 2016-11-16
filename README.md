@@ -18,7 +18,6 @@ Optical Character Recognition for cheques using the [MICR Code](https://en.wikip
 {
   confidence: '86.748',
   numbers: {
-    cheque: '184',
     transit: '00502',
     institution: '010',
     account: '705555'
