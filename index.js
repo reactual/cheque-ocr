@@ -6,7 +6,7 @@ var LANGUAGE_CODE = 'mcr';
 var LANGUAGE_PATH = './';
 var MICR_CHARACTERS = '0123456789abcd';
 var TESSERACT_CLIENT = Tesseract.create({langPath: LANGUAGE_PATH});
-var CONFIDENCE_THRESHOLD_PERCENT = 50;
+var CONFIDENCE_THRESHOLD_PERCENT = 45;
 var CANADIAN_CHEQUE_REGEX = named(/c(:<cheque>[0-9]{3,})ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
 
 function getConfidentSymbols(words) {
@@ -36,7 +36,7 @@ module.exports = function(image, callback) {
     }
 
     var lines = result.blocks[0].lines;
-    var chequeLineWords = lines[lines.length - 1].words
+    var chequeLineWords = lines[lines.length - 1].words;
     var confidentSymbols = getConfidentSymbols(chequeLineWords);
     var averageConfidence = confidentSymbols.reduce(function(value, symbol) { return value + symbol.confidence; }, 0) / confidentSymbols.length;
     var parsedChequeLine = confidentSymbols.map(function(symbol) { return symbol.text; }).join("");
