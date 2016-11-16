@@ -29,7 +29,7 @@ Optical Character Recognition for cheques using the [MICR Code](https://en.wikip
 
 ## Installation
 
-- Required: Node 7.1.0
+- Required: [node](https://nodejs.org/) v6.8.0 or greater
 - Recommended: [n](https://github.com/tj/n) and [avn](https://github.com/wbyoung/avn)
 - To install, run `npm install cheque-ocr` [TODO]
 
