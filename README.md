@@ -33,7 +33,17 @@ Optical Character Recognition for cheques using the [MICR Code](https://en.wikip
 
 ## Usage
 
-Run `node example/example.js`
+```js
+var chequeOCR = require('cheque-ocr'),
+    fs = require('fs');
+
+var image = fs.readFileSync('/path/to/image.jpg');
+chequeOCR(image, function(result) {
+  console.log(result);
+});
+```
+
+For a demo, run `node example/example.js`.
 
 ## How it works
 
