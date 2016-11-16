@@ -10,7 +10,11 @@ var CONFIDENCE_THRESHOLD_PERCENT = 50;
 var CANADIAN_CHEQUE_REGEX = named(/c(:<cheque>[0-9]{3,})ca(:<transit>[0-9]{4,5})d(:<institution>[0-9]{3})a(:<account>[dc0-9]+)/);
 
 function getConfidentSymbols(words) {
-  return _.flatten(words.map(function(word) { return word.symbols; })).filter(function(symbol) { return symbol.confidence > CONFIDENCE_THRESHOLD_PERCENT; });
+  return _.flatten(words.map(function(word) {
+    return word.symbols;
+  })).filter(function(symbol) {
+    return symbol.confidence > CONFIDENCE_THRESHOLD_PERCENT;
+  });
 }
 
 function removeNonNumericSymbols(text) {
