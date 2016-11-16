@@ -2,6 +2,29 @@
 
 Optical Character Recognition for cheques using the [MICR Code](https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition) standard.
 
+<table>
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+      <img src="https://cloud.githubusercontent.com/assets/158675/20335204/9e83d266-ab8e-11e6-899b-48caa8938841.jpg" width="500">
+    </td>
+    <td>
+      <pre>
+{
+  cheque: '184',
+  transit: '00502',
+  institution: '010',
+  account: '705555'
+}</pre>
+    </td>
+  </tr>
+</table>
+
 ## Installation
 
 - Required: Node v7.1
