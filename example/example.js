@@ -14,7 +14,7 @@ for (var institution in images) {
   chequeOCR(image, function(err, result) {
     if (err) {
       console.warn("Sample invalid image:");
-      console.warn(err);
+      console.warn(err, result);
     } else {
       console.log("Sample valid image:");
       console.log(result);

@@ -26,9 +26,12 @@ module.exports = function(image, callback) {
     tessedit_char_whitelist: MICR_CHARACTERS,
   }).then(function(result){
     var text = result.text;
+    var response = {
+      rawText: text,
+    };
 
     if (result.blocks.length === 0 || result.blocks[0].lines.length === 0) {
-      return callback({error: "NO_TEXT_BLOCKS_FOUND"}, {});
+      return callback({error: "NO_TEXT_BLOCKS_FOUND"}, response);
     }
 
     var lines = result.blocks[0].lines;
@@ -39,16 +42,14 @@ module.exports = function(image, callback) {
     var chequeMatches = CANADIAN_CHEQUE_REGEX.exec(chequeLine);
 
     if (!chequeMatches) {
-      return callback({error: "NO_CHEQUE_NUMBERS_FOUND"}, {});
+      return callback({error: "NO_CHEQUE_NUMBERS_FOUND"}, response);
     }
 
-    var response = {
-      cheque: removeNonNumericSymbols(chequeMatches.capture('cheque')),
-      transit: removeNonNumericSymbols(chequeMatches.capture('transit')),
-      institution: removeNonNumericSymbols(chequeMatches.capture('institution')),
-      account: removeNonNumericSymbols(chequeMatches.capture('account')),
-      rawText: text,
-    };
+    response.cheque = removeNonNumericSymbols(chequeMatches.capture('cheque'));
+    response.transit = removeNonNumericSymbols(chequeMatches.capture('transit'));
+    response.institution = removeNonNumericSymbols(chequeMatches.capture('institution'));
+    response.account = removeNonNumericSymbols(chequeMatches.capture('account'));
+    
     callback(null, response);
   });
 };
