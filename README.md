@@ -32,7 +32,7 @@ Optical Character Recognition for cheques using the [MICR Code](https://en.wikip
 
 - Required: Node v7.1
 - Recommended: [n](https://github.com/tj/n) and [avn](https://github.com/wbyoung/avn)
-- To install, run `npm install cheque-ocr`
+- To install, run `npm install cheque-ocr` [TODO]
 
 ## Usage
 
@@ -50,7 +50,7 @@ For a demo, run `node example/example.js`.
 
 ## How it works
 
-1. [Not Yet Implemented] Normalize orientation of cheque image.
+1. [TODO] Normalize orientation of cheque image.
 2. Determine region of interest (ROI) where the MICR Code exists within the cheque image.
 3. Within ROI, use Tesseract to convert MICR Code to text.
 
