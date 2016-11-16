@@ -55,4 +55,4 @@ For a demo, run `node example/example.js`.
 
 ## Acknowledgements
 
-MICR training data for Tesseract from [BigPino67/Tesseract-MICR-OCR](https://github.com/BigPino67/Tesseract-MICR-OCR/tree/master/training/tessdata)
+MICR training data for Tesseract from [BigPino67/Tesseract-MICR-OCR](https://github.com/BigPino67/Tesseract-MICR-OCR)
