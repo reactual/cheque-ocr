@@ -50,7 +50,7 @@ For a demo, run `node example/example.js`.
 ## How it works
 
 1. [TODO] Normalize orientation of cheque image.
-2. Determine region of interest (ROI) where the MICR Code exists within the cheque image.
+2. Determine region of interest (ROI) where the MICR Code exists.
 3. Within ROI, use Tesseract to convert MICR Code to text.
 
 ## Acknowledgements
