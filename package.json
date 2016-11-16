@@ -1,0 +1,15 @@
+{
+  "name": "cheque-ocr",
+  "version": "1.0.0",
+  "description": "Optical Character Recognition for cheques using the MICR Code standard.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "named-regexp": "^0.1.1",
+    "tesseract.js": "^1.0.10"
+  }
+}
